@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Server Test</title>
+</head>
+<body>
+    <h1>Simple Server Test</h1>
+    <form id="testForm" action="/endpoint" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="response"></p>
+
+    <script>
+        const form = document.getElementById('testForm');
+        const responseElement = document.getElementById('response');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const formData = new FormData(form);
+
+            fetch('/endpoint', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                responseElement.textContent = `Response from the server: ${data}`;
+            })
+            .catch(error => {
+                responseElement.textContent = `An error occurred: ${error}`;
+            });
+        });
+    </script>
+</body>
+</html>
