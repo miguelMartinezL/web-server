@@ -1,4 +1,4 @@
-# Web Server to Practie 
+# Web Server with nginx to Practie 
 
 for now this is a simple server. To build and run the docker image run:
 
