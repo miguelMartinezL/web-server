@@ -8,7 +8,7 @@ for now this is a simple server. To build and run the docker image run:
 
 or
 
-`docker-compose up -d`
+`docker-compose -f docker-compose.yml up -d webserver`
 
 check on 
 
