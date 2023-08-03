@@ -8,3 +8,15 @@ services:
     volumes:
       - ./html/index.html:/usr/share/nginx/html/index.html
       - ./style/style.css:/usr/share/nginx/html/style.css
+
+  app:
+    build: "server"
+    container_name: app
+    tty: true
+    ports:
+      - 1111:7777
+      - 2222:7777
+      - 3333:7777
+      - 4444:7777
+    depends_on:
+      - webserver
