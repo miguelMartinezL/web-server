@@ -13,7 +13,7 @@ docker run --name some-nginx -d -p 8080:80 some-content-nginx
 or
 
 ```bash
-docker-compose -f docker-compose.yml up -d webserver
+docker-compose -f docker-compose.yml up -d webserver app
 ```
 
 check on 
